@@ -1,5 +1,7 @@
 
+
 #include <stdio.h>
+#include <string.h>
 
 /* 構造体 syouhin の宣言 */
 struct syouhin {
@@ -17,7 +19,8 @@ struct uriage {
 
 int main(void)
 {
-	int i, sum = 0, s[4] = { 0 };
+	char d[8][11];
+	int i, j = 0, sum = 0, s[8] = { 0 }, t[8] = { 0 };
 	struct syouhin slist[4] = {
 		{ 1, "ABCDEFG", 1000 },
 		{ 2, "MNO",     7500 },
@@ -36,19 +39,27 @@ int main(void)
 	};
 
 	for ( i = 0 ; i < 8 ; i++ ) {
-		s[ulist[i].no - 1] += slist[ulist[i].no - 1].tanka
-					* ulist[i].kazu;
+		s[i] += slist[ulist[i].no - 1].tanka * ulist[i].kazu;
 	}
-	printf("+--+----------+--------+\n");
-	printf("|No|　商品名　|売上金額|\n");
-	printf("+--+----------+--------+\n");
-	for ( i = 0 ; i < 4 ; i++ ) {
-		printf("|%2d|%-10s|%8d|\n", slist[i].no, slist[i].name, s[i]);
-		sum += s[i];
+	strcpy(d[0], ulist[0].date);
+	t[0] += s[0];
+	for ( i = 1 ; i < 8 ; i++ ) {
+		if ( strcmp(d[j], ulist[i].date) ) {
+			strcpy(d[++j], ulist[i].date);
+		}
+		t[j] += s[i];
 	}
-	printf("+--+----------+--------+\n");
-	printf("|   売上総合計|%8d|\n", sum);
-	printf("+--+----------+--------+\n");
+
+	printf("+----------+--------+\n");
+	printf("|　日　付　|売上金額|\n");
+	printf("+----------+--------+\n");
+	for ( i = 0 ; i <= j ; i++ ) {
+		printf("|%-10s|%8d|\n", d[i], t[i]);
+		sum += t[i];
+	}
+	printf("+----------+--------+\n");
+	printf("|売上総合計|%8d|\n", sum);
+	printf("+----------+--------+\n");
 
 	return 0;
 }
