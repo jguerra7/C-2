@@ -6,22 +6,14 @@
 void main(void)
 {
 
-int a;
-scanf("%d",&a);
-switch(a){
-
-    case 4:
-        printf("Mi");
-    case 3:
-        printf("ne");
-    case 2:
-        printf("helpas");
-    case 1:
-        printf("Vin");
-        break;
-    default:
-        printf("Error");
-    
+int a=" z",i=0;
+while(a>="a")
+{
+    printf("%c",a);
+    i++;
+    a=1;
+    if(i%7=0)
+        printf("\n");
 }
     
 }
