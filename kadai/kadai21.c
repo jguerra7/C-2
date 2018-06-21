@@ -13,7 +13,7 @@ int i,j;
 
 for(i=0;i<100;i++)
 {
-    if(scanf("%1f",&work)=EOF)
+    if(scanf("%lf",&work)==EOF)
         break;
     else
         a[i]=work;
@@ -28,7 +28,7 @@ for(j=0;j<i;j++)
 
 c=b/i;
 
-printf("%10.2f\n10.2f",b,c);
+printf("%10.2f\n%10.2f",b,c);
 
 
 }

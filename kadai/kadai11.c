@@ -17,6 +17,6 @@ void main(void)
 
     }
     
-    printf("%10d\n101d",b,c);
+    printf("%10d\n%10ld",b,c);
     
 }

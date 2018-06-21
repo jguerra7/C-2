@@ -6,7 +6,7 @@ void main(void)
 {
 int a,b,c;
 scanf("%x",&a);
-scamf("%d",&b);
+scanf("%d",&b);
 while((b<=0)||(b>=16))
 {
     scanf("%d",&b);

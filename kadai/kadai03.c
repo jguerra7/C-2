@@ -7,12 +7,12 @@ void main(void)
 
 long a;
 int b;
-scanf("%1d",&a);
+scanf("%ld",&a);
 b=a;
-printf("%1d\n");
-printf("%8d\n");
+printf("%8ld\n",a);
+printf("%8d\n",b);
 printf("%8x\n",b);
-printf("%81x\n",a);
+printf("%8lx\n",a);
 
     
 }

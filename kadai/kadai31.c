@@ -10,7 +10,7 @@ void main(void)
     long sums;
     scanf("%d%d%d",&h,&m,&s);
     sums=sec(h,m,s);;
-    printf("%1d",sums);
+    printf("%ld",sums);
 
 }
 
