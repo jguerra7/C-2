@@ -6,7 +6,7 @@
 #include <ctype.h>
 void main(void)
 {
-char str[] = "12abc12johnmede1235678kagaya";
+char str[] = "12abc12johnmede1235678kagaya   12 12 ";
  
    
    printf("%s \n",str);
@@ -21,6 +21,8 @@ char str[] = "12abc12johnmede1235678kagaya";
         else if (isdigit(str[i]) != 0)
             
             printf("Decimal_digits = %c \n",str[i]);
+        else
+            printf("OTHER  = %c \n",str[i]);
     }
  
     
